@@ -1,0 +1,15 @@
+#Internal package file, do not edit.
+#Fri Sep 23 17:55:14 PDT 2016
+1.base=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_
+1.file=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_/resources.arsc
+2.base=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_
+3.set=ANDROID_RESOURCE
+2.set=ANDROID_RESOURCE
+2.file=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_/res/layout/main.xml
+count=4
+1.set=ANDROID_RESOURCE
+3.base=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_
+0.set=ANDROID_RESOURCE
+0.base=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_
+3.file=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+0.file=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png

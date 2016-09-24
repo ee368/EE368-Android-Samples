@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Android.mk",
+    "/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Application.mk"
+  ],
+  "cleanCommands": [
+    "/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDEBUG\u003d1 APP_PLATFORM\u003dandroid-9 NDK_OUT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/.externalNativeBuild/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/build/intermediates/ndkBuild/debug/lib clean"
+  ],
+  "libraries": {
+    "mixed_sample-debug-armeabi-v7a": {
+      "buildCommand": "/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDEBUG\u003d1 APP_PLATFORM\u003dandroid-9 NDK_OUT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/.externalNativeBuild/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/build/intermediates/ndkBuild/debug/lib /Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libmixed_sample.so",
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "mixed_sample",
+      "files": [
+        {
+          "src": "/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni/jni_part.cpp",
+          "flags": "\"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-no-canonical-prefixes\" \"-g\" \"-march\u003darmv7-a\" \"-mfpu\u003dvfpv3-d16\" \"-mfloat-abi\u003dsoftfp\" \"-fno-exceptions\" \"-fno-rtti\" \"-mthumb\" \"-Os\" \"-DNDEBUG\" \"-I/Users/jeanbaptisteboin/Documents/Android/OpenCV-android-sdk/sdk/native/jni/include/opencv\" \"-I/Users/jeanbaptisteboin/Documents/Android/OpenCV-android-sdk/sdk/native/jni/include\" \"-I/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include\" \"-I/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include\" \"-I/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward\" \"-I/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/src/main/jni\" \"-DANDROID\" \"-fPIC\" \"-DANDROID\" \"-fsigned-char\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"-frtti\" \"-fexceptions\" \"-isystem\" \"/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/platforms/android-9/arch-arm/usr/include\""
+        }
+      ],
+      "output": "/Users/jeanbaptisteboin/AndroidStudioProjects/AdaptiveBinarization/openCVTutorial2MixedProcessing/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libmixed_sample.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi-v7a": {
+      "cppCompilerExecutable": "/Users/jeanbaptisteboin/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-g++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

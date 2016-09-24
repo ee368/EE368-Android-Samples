@@ -1,0 +1,24 @@
+#Internal package file, do not edit.
+#Fri Sep 23 15:48:28 PDT 2016
+2.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+5.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main/lib/armeabi-v7a/libdetection_based_tracker.so
+5.set=NATIVE_RESOURCE
+3.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+6.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+2.set=ANDROID_RESOURCE
+4.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+count=7
+0.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/layout/face_detect_surface_view.xml
+5.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main
+4.set=DEX
+6.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+1.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/resources.arsc
+1.set=ANDROID_RESOURCE
+2.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/drawable/icon.png
+6.set=ANDROID_RESOURCE
+0.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+3.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/raw/lbpcascade_frontalface.xml
+3.set=ANDROID_RESOURCE
+1.base=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+4.file=/Users/jeanbaptisteboin/AndroidStudioProjects/face-detection/openCVSamplefacedetection/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+0.set=ANDROID_RESOURCE

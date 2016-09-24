@@ -1,0 +1,7 @@
+#Fri Sep 23 17:55:21 PDT 2016
+base.0=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_61f20f132b7a384112ef85ff71bec817db07d936
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0644de651ad2a383b71c6d2e5fbde8770d0457f2/classes.dex
+base.1=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0644de651ad2a383b71c6d2e5fbde8770d0457f2
+file.0=/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_61f20f132b7a384112ef85ff71bec817db07d936/classes.dex

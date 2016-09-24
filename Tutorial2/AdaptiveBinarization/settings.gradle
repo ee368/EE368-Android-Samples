@@ -1,0 +1,2 @@
+include ':openCVTutorial2MixedProcessing'
+include ':openCVLibrary'

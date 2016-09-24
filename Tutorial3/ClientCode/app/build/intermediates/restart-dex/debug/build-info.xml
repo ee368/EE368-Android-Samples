@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    api-level="23"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="55269159213924"
+    token="5695442885679358035"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="265" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="73" />
+    <task
+        name="verifier"
+        duration="4" />
+
+    <artifact
+        location="/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="52700377941788"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="55269159213924"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/jeanbaptisteboin/AndroidStudioProjects/SIFTExample/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>
