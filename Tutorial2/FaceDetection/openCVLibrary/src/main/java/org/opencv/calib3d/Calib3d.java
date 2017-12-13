@@ -276,22 +276,23 @@ public class Calib3d {
  * "findChessboardCorners".</p>
  *
  * @param objectPoints In the new interface it is a vector of vectors of
- * calibration pattern points in the calibration pattern coordinate space. The
- * outer vector contains as many elements as the number of the pattern views. If
- * the same calibration pattern is shown in each view and it is fully visible,
- * all the vectors will be the same. Although, it is possible to use partially
- * occluded patterns, or even different patterns in different views. Then, the
- * vectors will be different. The points are 3D, but since they are in a pattern
- * coordinate system, then, if the rig is planar, it may make sense to put the
- * model to a XY coordinate plane so that Z-coordinate of each input object
- * point is 0.
+ * calibration pattern points in the calibration pattern coordinate space (e.g.
+ * std.vector<std.vector<cv.Vec3f>>). The outer vector contains as many
+ * elements as the number of the pattern views. If the same calibration pattern
+ * is shown in each view and it is fully visible, all the vectors will be the
+ * same. Although, it is possible to use partially occluded patterns, or even
+ * different patterns in different views. Then, the vectors will be different.
+ * The points are 3D, but since they are in a pattern coordinate system, then,
+ * if the rig is planar, it may make sense to put the model to a XY coordinate
+ * plane so that Z-coordinate of each input object point is 0.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
  * @param imagePoints In the new interface it is a vector of vectors of the
- * projections of calibration pattern points. <code>imagePoints.size()</code>
- * and <code>objectPoints.size()</code> and <code>imagePoints[i].size()</code>
- * must be equal to <code>objectPoints[i].size()</code> for each <code>i</code>.
+ * projections of calibration pattern points (e.g. std.vector<std.vector<cv.Vec2f>>).
+ * <code>imagePoints.size()</code> and <code>objectPoints.size()</code> and
+ * <code>imagePoints[i].size()</code> must be equal to <code>objectPoints[i].size()</code>
+ * for each <code>i</code>.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
@@ -307,12 +308,12 @@ public class Calib3d {
  * @param distCoeffs Output vector of distortion coefficients <em>(k_1, k_2,
  * p_1, p_2[, k_3[, k_4, k_5, k_6]])</em> of 4, 5, or 8 elements.
  * @param rvecs Output vector of rotation vectors (see "Rodrigues") estimated
- * for each pattern view. That is, each k-th rotation vector together with the
- * corresponding k-th translation vector (see the next output parameter
- * description) brings the calibration pattern from the model coordinate space
- * (in which object points are specified) to the world coordinate space, that
- * is, a real position of the calibration pattern in the k-th pattern view
- * (k=0.. *M* -1).
+ * for each pattern view (e.g. std.vector<cv.Mat>>). That is, each k-th
+ * rotation vector together with the corresponding k-th translation vector (see
+ * the next output parameter description) brings the calibration pattern from
+ * the model coordinate space (in which object points are specified) to the
+ * world coordinate space, that is, a real position of the calibration pattern
+ * in the k-th pattern view (k=0.. *M* -1).
  * @param tvecs Output vector of translation vectors estimated for each pattern
  * view.
  * @param flags Different flags that may be zero or a combination of the
@@ -363,7 +364,9 @@ public class Calib3d {
         Mat tvecs_mat = new Mat();
         double retVal = calibrateCamera_0(objectPoints_mat.nativeObj, imagePoints_mat.nativeObj, imageSize.width, imageSize.height, cameraMatrix.nativeObj, distCoeffs.nativeObj, rvecs_mat.nativeObj, tvecs_mat.nativeObj, flags, criteria.type, criteria.maxCount, criteria.epsilon);
         Converters.Mat_to_vector_Mat(rvecs_mat, rvecs);
+        rvecs_mat.release();
         Converters.Mat_to_vector_Mat(tvecs_mat, tvecs);
+        tvecs_mat.release();
         return retVal;
     }
 
@@ -412,22 +415,23 @@ public class Calib3d {
  * "findChessboardCorners".</p>
  *
  * @param objectPoints In the new interface it is a vector of vectors of
- * calibration pattern points in the calibration pattern coordinate space. The
- * outer vector contains as many elements as the number of the pattern views. If
- * the same calibration pattern is shown in each view and it is fully visible,
- * all the vectors will be the same. Although, it is possible to use partially
- * occluded patterns, or even different patterns in different views. Then, the
- * vectors will be different. The points are 3D, but since they are in a pattern
- * coordinate system, then, if the rig is planar, it may make sense to put the
- * model to a XY coordinate plane so that Z-coordinate of each input object
- * point is 0.
+ * calibration pattern points in the calibration pattern coordinate space (e.g.
+ * std.vector<std.vector<cv.Vec3f>>). The outer vector contains as many
+ * elements as the number of the pattern views. If the same calibration pattern
+ * is shown in each view and it is fully visible, all the vectors will be the
+ * same. Although, it is possible to use partially occluded patterns, or even
+ * different patterns in different views. Then, the vectors will be different.
+ * The points are 3D, but since they are in a pattern coordinate system, then,
+ * if the rig is planar, it may make sense to put the model to a XY coordinate
+ * plane so that Z-coordinate of each input object point is 0.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
  * @param imagePoints In the new interface it is a vector of vectors of the
- * projections of calibration pattern points. <code>imagePoints.size()</code>
- * and <code>objectPoints.size()</code> and <code>imagePoints[i].size()</code>
- * must be equal to <code>objectPoints[i].size()</code> for each <code>i</code>.
+ * projections of calibration pattern points (e.g. std.vector<std.vector<cv.Vec2f>>).
+ * <code>imagePoints.size()</code> and <code>objectPoints.size()</code> and
+ * <code>imagePoints[i].size()</code> must be equal to <code>objectPoints[i].size()</code>
+ * for each <code>i</code>.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
@@ -443,12 +447,12 @@ public class Calib3d {
  * @param distCoeffs Output vector of distortion coefficients <em>(k_1, k_2,
  * p_1, p_2[, k_3[, k_4, k_5, k_6]])</em> of 4, 5, or 8 elements.
  * @param rvecs Output vector of rotation vectors (see "Rodrigues") estimated
- * for each pattern view. That is, each k-th rotation vector together with the
- * corresponding k-th translation vector (see the next output parameter
- * description) brings the calibration pattern from the model coordinate space
- * (in which object points are specified) to the world coordinate space, that
- * is, a real position of the calibration pattern in the k-th pattern view
- * (k=0.. *M* -1).
+ * for each pattern view (e.g. std.vector<cv.Mat>>). That is, each k-th
+ * rotation vector together with the corresponding k-th translation vector (see
+ * the next output parameter description) brings the calibration pattern from
+ * the model coordinate space (in which object points are specified) to the
+ * world coordinate space, that is, a real position of the calibration pattern
+ * in the k-th pattern view (k=0.. *M* -1).
  * @param tvecs Output vector of translation vectors estimated for each pattern
  * view.
  * @param flags Different flags that may be zero or a combination of the
@@ -497,7 +501,9 @@ public class Calib3d {
         Mat tvecs_mat = new Mat();
         double retVal = calibrateCamera_1(objectPoints_mat.nativeObj, imagePoints_mat.nativeObj, imageSize.width, imageSize.height, cameraMatrix.nativeObj, distCoeffs.nativeObj, rvecs_mat.nativeObj, tvecs_mat.nativeObj, flags);
         Converters.Mat_to_vector_Mat(rvecs_mat, rvecs);
+        rvecs_mat.release();
         Converters.Mat_to_vector_Mat(tvecs_mat, tvecs);
+        tvecs_mat.release();
         return retVal;
     }
 
@@ -546,22 +552,23 @@ public class Calib3d {
  * "findChessboardCorners".</p>
  *
  * @param objectPoints In the new interface it is a vector of vectors of
- * calibration pattern points in the calibration pattern coordinate space. The
- * outer vector contains as many elements as the number of the pattern views. If
- * the same calibration pattern is shown in each view and it is fully visible,
- * all the vectors will be the same. Although, it is possible to use partially
- * occluded patterns, or even different patterns in different views. Then, the
- * vectors will be different. The points are 3D, but since they are in a pattern
- * coordinate system, then, if the rig is planar, it may make sense to put the
- * model to a XY coordinate plane so that Z-coordinate of each input object
- * point is 0.
+ * calibration pattern points in the calibration pattern coordinate space (e.g.
+ * std.vector<std.vector<cv.Vec3f>>). The outer vector contains as many
+ * elements as the number of the pattern views. If the same calibration pattern
+ * is shown in each view and it is fully visible, all the vectors will be the
+ * same. Although, it is possible to use partially occluded patterns, or even
+ * different patterns in different views. Then, the vectors will be different.
+ * The points are 3D, but since they are in a pattern coordinate system, then,
+ * if the rig is planar, it may make sense to put the model to a XY coordinate
+ * plane so that Z-coordinate of each input object point is 0.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
  * @param imagePoints In the new interface it is a vector of vectors of the
- * projections of calibration pattern points. <code>imagePoints.size()</code>
- * and <code>objectPoints.size()</code> and <code>imagePoints[i].size()</code>
- * must be equal to <code>objectPoints[i].size()</code> for each <code>i</code>.
+ * projections of calibration pattern points (e.g. std.vector<std.vector<cv.Vec2f>>).
+ * <code>imagePoints.size()</code> and <code>objectPoints.size()</code> and
+ * <code>imagePoints[i].size()</code> must be equal to <code>objectPoints[i].size()</code>
+ * for each <code>i</code>.
  *
  * <p>In the old interface all the vectors of object points from different views
  * are concatenated together.</p>
@@ -577,12 +584,12 @@ public class Calib3d {
  * @param distCoeffs Output vector of distortion coefficients <em>(k_1, k_2,
  * p_1, p_2[, k_3[, k_4, k_5, k_6]])</em> of 4, 5, or 8 elements.
  * @param rvecs Output vector of rotation vectors (see "Rodrigues") estimated
- * for each pattern view. That is, each k-th rotation vector together with the
- * corresponding k-th translation vector (see the next output parameter
- * description) brings the calibration pattern from the model coordinate space
- * (in which object points are specified) to the world coordinate space, that
- * is, a real position of the calibration pattern in the k-th pattern view
- * (k=0.. *M* -1).
+ * for each pattern view (e.g. std.vector<cv.Mat>>). That is, each k-th
+ * rotation vector together with the corresponding k-th translation vector (see
+ * the next output parameter description) brings the calibration pattern from
+ * the model coordinate space (in which object points are specified) to the
+ * world coordinate space, that is, a real position of the calibration pattern
+ * in the k-th pattern view (k=0.. *M* -1).
  * @param tvecs Output vector of translation vectors estimated for each pattern
  * view.
  *
@@ -601,7 +608,9 @@ public class Calib3d {
         Mat tvecs_mat = new Mat();
         double retVal = calibrateCamera_2(objectPoints_mat.nativeObj, imagePoints_mat.nativeObj, imageSize.width, imageSize.height, cameraMatrix.nativeObj, distCoeffs.nativeObj, rvecs_mat.nativeObj, tvecs_mat.nativeObj);
         Converters.Mat_to_vector_Mat(rvecs_mat, rvecs);
+        rvecs_mat.release();
         Converters.Mat_to_vector_Mat(tvecs_mat, tvecs);
+        tvecs_mat.release();
         return retVal;
     }
 
@@ -1148,12 +1157,12 @@ public class Calib3d {
  * @param flags Various operation flags that can be zero or a combination of the
  * following values:
  * <ul>
- *   <li> CV_CALIB_CB_ADAPTIVE_THRESH Use adaptive thresholding to convert the
+ *   <li> CALIB_CB_ADAPTIVE_THRESH Use adaptive thresholding to convert the
  * image to black and white, rather than a fixed threshold level (computed from
  * the average image brightness).
- *   <li> CV_CALIB_CB_NORMALIZE_IMAGE Normalize the image gamma with
- * "equalizeHist" before applying fixed or adaptive thresholding.
- *   <li> CV_CALIB_CB_FILTER_QUADS Use additional criteria (like contour area,
+ *   <li> CALIB_CB_NORMALIZE_IMAGE Normalize the image gamma with "equalizeHist"
+ * before applying fixed or adaptive thresholding.
+ *   <li> CALIB_CB_FILTER_QUADS Use additional criteria (like contour area,
  * perimeter, square-like shape) to filter out false quads extracted at the
  * contour retrieval stage.
  *   <li> CALIB_CB_FAST_CHECK Run a fast check on the image that looks for
@@ -1336,7 +1345,9 @@ public class Calib3d {
  * @param param2 Parameter used for the RANSAC or LMedS methods only. It
  * specifies a desirable level of confidence (probability) that the estimated
  * matrix is correct.
- * @param mask a mask
+ * @param mask Output array of N elements, every element of which is set to 0
+ * for outliers and to 1 for the other points. The array is computed only in the
+ * RANSAC and LMedS methods. For other methods, it is set to all 1's.
  *
  * @see <a href="http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findfundamentalmat">org.opencv.calib3d.Calib3d.findFundamentalMat</a>
  */

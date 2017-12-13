@@ -197,6 +197,7 @@ public class Subdiv2D {
         Mat facetCenters_mat = facetCenters;
         getVoronoiFacetList_0(nativeObj, idx_mat.nativeObj, facetList_mat.nativeObj, facetCenters_mat.nativeObj);
         Converters.Mat_to_vector_vector_Point2f(facetList_mat, facetList);
+        facetList_mat.release();
         return;
     }
 

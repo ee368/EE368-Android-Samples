@@ -1074,7 +1074,8 @@ public class Mat {
  * @param m Destination matrix. If it does not have a proper size or type before
  * the operation, it is reallocated.
  * @param mask Operation mask. Its non-zero elements indicate which matrix
- * elements need to be copied.
+ * elements need to be copied. Keep in mind that the mask needs to be of type
+ * CV_8U and can have 1 or multiple channels.
  *
  * @see <a href="http://docs.opencv.org/modules/core/doc/basic_structures.html#mat-copyto">org.opencv.core.Mat.copyTo</a>
  */

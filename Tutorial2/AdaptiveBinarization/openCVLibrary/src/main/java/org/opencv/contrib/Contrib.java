@@ -13,6 +13,9 @@ import org.opencv.utils.Converters;
 public class Contrib {
 
     public static final int
+            RETINA_COLOR_RANDOM = 0,
+            RETINA_COLOR_DIAGONAL = 1,
+            RETINA_COLOR_BAYER = 2,
             ROTATION = 1,
             TRANSLATION = 2,
             RIGID_BODY_MOTION = 4,
@@ -27,10 +30,7 @@ public class Contrib {
             COLORMAP_COOL = 8,
             COLORMAP_HSV = 9,
             COLORMAP_PINK = 10,
-            COLORMAP_HOT = 11,
-            RETINA_COLOR_RANDOM = 0,
-            RETINA_COLOR_DIAGONAL = 1,
-            RETINA_COLOR_BAYER = 2;
+            COLORMAP_HOT = 11;
 
 
     //
@@ -98,6 +98,7 @@ public class Contrib {
         Mat cost_mat = cost;
         int retVal = chamerMatching_0(img.nativeObj, templ.nativeObj, results_mat.nativeObj, cost_mat.nativeObj, templScale, maxMatches, minMatchDistance, padX, padY, scales, minScale, maxScale, orientationWeight, truncate);
         Converters.Mat_to_vector_vector_Point(results_mat, results);
+        results_mat.release();
         return retVal;
     }
 
@@ -107,6 +108,7 @@ public class Contrib {
         Mat cost_mat = cost;
         int retVal = chamerMatching_1(img.nativeObj, templ.nativeObj, results_mat.nativeObj, cost_mat.nativeObj);
         Converters.Mat_to_vector_vector_Point(results_mat, results);
+        results_mat.release();
         return retVal;
     }
 

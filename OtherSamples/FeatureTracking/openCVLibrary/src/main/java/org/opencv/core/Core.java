@@ -12,12 +12,12 @@ import org.opencv.utils.Converters;
 public class Core {
 
     // these constants are wrapped inside functions to prevent inlining
-    private static String getVersion() { return "2.4.11.0"; }
-    private static String getNativeLibraryName() { return "opencv_java2411"; }
+    private static String getVersion() { return "2.4.13.4"; }
+    private static String getNativeLibraryName() { return "opencv_java2413"; }
     private static int getVersionEpoch() { return 2; }
     private static int getVersionMajor() { return 4; }
-    private static int getVersionMinor() { return 11; }
-    private static int getVersionRevision() { return 0; }
+    private static int getVersionMinor() { return 13; }
+    private static int getVersionRevision() { return 4; }
 
     public static final String VERSION = getVersion();
     public static final String NATIVE_LIBRARY_NAME = getNativeLibraryName();
@@ -106,6 +106,13 @@ public class Core {
             KMEANS_RANDOM_CENTERS = 0,
             KMEANS_PP_CENTERS = 2,
             KMEANS_USE_INITIAL_LABELS = 1,
+            MARKER_CROSS = 0,
+            MARKER_TILTED_CROSS = 1,
+            MARKER_STAR = 2,
+            MARKER_DIAMOND = 3,
+            MARKER_SQUARE = 4,
+            MARKER_TRIANGLE_UP = 5,
+            MARKER_TRIANGLE_DOWN = 6,
             FONT_HERSHEY_SIMPLEX = 0,
             FONT_HERSHEY_PLAIN = 1,
             FONT_HERSHEY_DUPLEX = 2,
@@ -3157,6 +3164,27 @@ public class Core {
 
 
     //
+    // C++:  void drawMarker(Mat& img, Point position, Scalar color, int markerType = MARKER_CROSS, int markerSize = 20, int thickness = 1, int line_type = 8)
+    //
+
+    public static void drawMarker(Mat img, Point position, Scalar color, int markerType, int markerSize, int thickness, int line_type)
+    {
+
+        drawMarker_0(img.nativeObj, position.x, position.y, color.val[0], color.val[1], color.val[2], color.val[3], markerType, markerSize, thickness, line_type);
+
+        return;
+    }
+
+    public static void drawMarker(Mat img, Point position, Scalar color)
+    {
+
+        drawMarker_1(img.nativeObj, position.x, position.y, color.val[0], color.val[1], color.val[2], color.val[3]);
+
+        return;
+    }
+
+
+    //
     // C++:  bool eigen(Mat src, bool computeEigenvectors, Mat& eigenvalues, Mat& eigenvectors)
     //
 
@@ -3946,8 +3974,8 @@ public class Core {
  * parallel region.
  * Always returns 0 if called outside of parallel region.</p>
  *
- * <p>The exact meaning of return value depends on the threading framework used by
- * OpenCV library:</p>
+ * <p>The exact meaning of the return value depends on the threading framework used
+ * by OpenCV library:</p>
  * <ul>
  *   <li> TBB – Unsupported with current 4.1 TBB release. May be will be
  * supported in future.
@@ -6307,7 +6335,7 @@ public class Core {
  * <p>The function <code>pow</code> raises every element of the input array to
  * <code>power</code> :</p>
  *
- * <p><em>dst(I) = src(I)^power if power is integer; |src(I)|^power
+ * <p><em>dst(I) = src(I)^(power) if power is integer; |src(I)|^(power)
  * otherwise&ltBR&gtSo, for a non-integer power exponent, the absolute values of
  * input array elements are used. However, it is possible to get true values for
  * negative values using some extra operations. In the example below, computing
@@ -6866,19 +6894,19 @@ public class Core {
 /**
  * <p>OpenCV will try to set the number of threads for the next parallel region.
  * If <code>threads == 0</code>, OpenCV will disable threading optimizations and
- * run all it's functions sequentially. Passing <code>threads < 0</code> will
+ * run all its functions sequentially. Passing <code>threads < 0</code> will
  * reset threads number to system default.
  * This function must be called outside of parallel region.</p>
  *
- * <p>OpenCV will try to run it's functions with specified threads number, but some
+ * <p>OpenCV will try to run its functions with specified threads number, but some
  * behaviour differs from framework:</p>
  * <ul>
  *   <li> TBB – User-defined parallel constructions will run with the same
- * threads number, if another does not specified. If late on user creates own
+ * threads number, if another is not specified. If late on user creates his own
  * scheduler, OpenCV will be use it.
  *   <li> OpenMP – No special defined behaviour.
  *   <li> Concurrency – If <code>threads == 1</code>, OpenCV will disable
- * threading optimizations and run it's functions sequentially.
+ * threading optimizations and run its functions sequentially.
  *   <li> GCD – Supports only values <= 0.
  *   <li> C= – No special defined behaviour.
  * </ul>
@@ -6893,6 +6921,19 @@ public class Core {
     {
 
         setNumThreads_0(nthreads);
+
+        return;
+    }
+
+
+    //
+    // C++:  void setRNGSeed(int seed)
+    //
+
+    public static void setRNGSeed(int seed)
+    {
+
+        setRNGSeed_0(seed);
 
         return;
     }
@@ -7195,6 +7236,7 @@ public class Core {
         Mat mv_mat = new Mat();
         split_0(m.nativeObj, mv_mat.nativeObj);
         Converters.Mat_to_vector_Mat(mv_mat, mv);
+        mv_mat.release();
         return;
     }
 
@@ -8167,6 +8209,10 @@ public class Core {
     private static native void divide_6(long src1_nativeObj, double src2_val0, double src2_val1, double src2_val2, double src2_val3, long dst_nativeObj, double scale);
     private static native void divide_7(long src1_nativeObj, double src2_val0, double src2_val1, double src2_val2, double src2_val3, long dst_nativeObj);
 
+    // C++:  void drawMarker(Mat& img, Point position, Scalar color, int markerType = MARKER_CROSS, int markerSize = 20, int thickness = 1, int line_type = 8)
+    private static native void drawMarker_0(long img_nativeObj, double position_x, double position_y, double color_val0, double color_val1, double color_val2, double color_val3, int markerType, int markerSize, int thickness, int line_type);
+    private static native void drawMarker_1(long img_nativeObj, double position_x, double position_y, double color_val0, double color_val1, double color_val2, double color_val3);
+
     // C++:  bool eigen(Mat src, bool computeEigenvectors, Mat& eigenvalues, Mat& eigenvectors)
     private static native boolean eigen_0(long src_nativeObj, boolean computeEigenvectors, long eigenvalues_nativeObj, long eigenvectors_nativeObj);
 
@@ -8393,6 +8439,9 @@ public class Core {
 
     // C++:  void setNumThreads(int nthreads)
     private static native void setNumThreads_0(int nthreads);
+
+    // C++:  void setRNGSeed(int seed)
+    private static native void setRNGSeed_0(int seed);
 
     // C++:  bool solve(Mat src1, Mat src2, Mat& dst, int flags = DECOMP_LU)
     private static native boolean solve_0(long src1_nativeObj, long src2_nativeObj, long dst_nativeObj, int flags);

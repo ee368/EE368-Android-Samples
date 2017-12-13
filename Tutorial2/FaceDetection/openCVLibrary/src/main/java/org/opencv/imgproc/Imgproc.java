@@ -128,6 +128,7 @@ public class Imgproc {
             MORPH_GRADIENT = CV_MOP_GRADIENT,
             MORPH_TOPHAT = CV_MOP_TOPHAT,
             MORPH_BLACKHAT = CV_MOP_BLACKHAT,
+            MORPH_HITMISS = CV_MOP_BLACKHAT+1,
             MORPH_RECT = 0,
             MORPH_CROSS = 1,
             MORPH_ELLIPSE = 2,
@@ -2153,7 +2154,7 @@ public class Imgproc {
  * less or equal to the specified precision. It uses the Douglas-Peucker
  * algorithm http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm</p>
  *
- * <p>See https://github.com/Itseez/opencv/tree/master/samples/cpp/contours2.cpp
+ * <p>See https://github.com/opencv/opencv/tree/master/samples/cpp/contours2.cpp
  * for the function usage model.</p>
  *
  * @param curve Input vector of a 2D point stored in:
@@ -3542,8 +3543,8 @@ public class Imgproc {
  * neighborhood <em>S(p)</em>. It calculates the covariation matrix of
  * derivatives over the neighborhood as:</p>
  *
- * <p><em>M = sum(by: S(p))(dI/dx)^2 sum(by: S(p))(dI/dx dI/dy)^2
- * sum(by: S(p))(dI/dx dI/dy)^2 sum(by: S(p))(dI/dy)^2 </em></p>
+ * <p><em>M = sum(by: S(p))(dI/dx)^2 sum(by: S(p))(dI/dx dI/dy)
+ * sum(by: S(p))(dI/dx dI/dy) sum(by: S(p))(dI/dy)^2 </em></p>
  *
  * <p>where the derivatives are computed using the "Sobel" operator.</p>
  *
@@ -3595,8 +3596,8 @@ public class Imgproc {
  * neighborhood <em>S(p)</em>. It calculates the covariation matrix of
  * derivatives over the neighborhood as:</p>
  *
- * <p><em>M = sum(by: S(p))(dI/dx)^2 sum(by: S(p))(dI/dx dI/dy)^2
- * sum(by: S(p))(dI/dx dI/dy)^2 sum(by: S(p))(dI/dy)^2 </em></p>
+ * <p><em>M = sum(by: S(p))(dI/dx)^2 sum(by: S(p))(dI/dx dI/dy)
+ * sum(by: S(p))(dI/dx dI/dy) sum(by: S(p))(dI/dy)^2 </em></p>
  *
  * <p>where the derivatives are computed using the "Sobel" operator.</p>
  *
@@ -5770,6 +5771,7 @@ public class Imgproc {
         Mat contours_mat = new Mat();
         findContours_0(image.nativeObj, contours_mat.nativeObj, hierarchy.nativeObj, mode, method, offset.x, offset.y);
         Converters.Mat_to_vector_vector_Point(contours_mat, contours);
+        contours_mat.release();
         return;
     }
 
@@ -5861,6 +5863,7 @@ public class Imgproc {
         Mat contours_mat = new Mat();
         findContours_1(image.nativeObj, contours_mat.nativeObj, hierarchy.nativeObj, mode, method);
         Converters.Mat_to_vector_vector_Point(contours_mat, contours);
+        contours_mat.release();
         return;
     }
 
@@ -7951,6 +7954,9 @@ public class Imgproc {
  *
  * <p><em>dst = blackhat(src, element)= close(src, element)- src</em></p>
  *
+ * <p>"Hit and Miss": Only supported for CV_8UC1 binary images. Tutorial can be
+ * found in this page: https://web.archive.org/web/20160316070407/http://opencv-code.com/tutorials/hit-or-miss-transform-in-opencv/</p>
+ *
  * <p>Any of the operations can be done in-place. In case of multi-channel images,
  * each channel is processed independently.</p>
  *
@@ -7971,6 +7977,7 @@ public class Imgproc {
  *   <li> MORPH_GRADIENT - a morphological gradient
  *   <li> MORPH_TOPHAT - "top hat"
  *   <li> MORPH_BLACKHAT - "black hat"
+ *   <li> MORPH_HITMISS - "hit and miss"
  * </ul>
  * @param kernel a kernel
  * @param anchor a anchor
@@ -8019,6 +8026,9 @@ public class Imgproc {
  *
  * <p><em>dst = blackhat(src, element)= close(src, element)- src</em></p>
  *
+ * <p>"Hit and Miss": Only supported for CV_8UC1 binary images. Tutorial can be
+ * found in this page: https://web.archive.org/web/20160316070407/http://opencv-code.com/tutorials/hit-or-miss-transform-in-opencv/</p>
+ *
  * <p>Any of the operations can be done in-place. In case of multi-channel images,
  * each channel is processed independently.</p>
  *
@@ -8039,6 +8049,7 @@ public class Imgproc {
  *   <li> MORPH_GRADIENT - a morphological gradient
  *   <li> MORPH_TOPHAT - "top hat"
  *   <li> MORPH_BLACKHAT - "black hat"
+ *   <li> MORPH_HITMISS - "hit and miss"
  * </ul>
  * @param kernel a kernel
  * @param anchor a anchor
@@ -8083,6 +8094,9 @@ public class Imgproc {
  *
  * <p><em>dst = blackhat(src, element)= close(src, element)- src</em></p>
  *
+ * <p>"Hit and Miss": Only supported for CV_8UC1 binary images. Tutorial can be
+ * found in this page: https://web.archive.org/web/20160316070407/http://opencv-code.com/tutorials/hit-or-miss-transform-in-opencv/</p>
+ *
  * <p>Any of the operations can be done in-place. In case of multi-channel images,
  * each channel is processed independently.</p>
  *
@@ -8103,6 +8117,7 @@ public class Imgproc {
  *   <li> MORPH_GRADIENT - a morphological gradient
  *   <li> MORPH_TOPHAT - "top hat"
  *   <li> MORPH_BLACKHAT - "black hat"
+ *   <li> MORPH_HITMISS - "hit and miss"
  * </ul>
  * @param kernel a kernel
  *

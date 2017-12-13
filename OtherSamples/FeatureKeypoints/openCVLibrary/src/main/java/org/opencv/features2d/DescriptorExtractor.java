@@ -139,7 +139,9 @@ public class DescriptorExtractor {
         Mat descriptors_mat = new Mat();
         compute_1(nativeObj, images_mat.nativeObj, keypoints_mat.nativeObj, descriptors_mat.nativeObj);
         Converters.Mat_to_vector_vector_KeyPoint(keypoints_mat, keypoints);
+        keypoints_mat.release();
         Converters.Mat_to_vector_Mat(descriptors_mat, descriptors);
+        descriptors_mat.release();
         return;
     }
 

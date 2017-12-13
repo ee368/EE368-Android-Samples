@@ -59,6 +59,12 @@ public class Highgui {
             CV_CAP_PROP_BUFFERSIZE = 38,
             CV_CAP_PROP_AUTOGRAB = 1024,
             CV_CAP_PROP_PREVIEW_FORMAT = 1026,
+            CV_CAP_PROP_PVAPI_FRAMESTARTTRIGGERMODE = 301,
+            CV_CAP_PROP_PVAPI_DECIMATIONHORIZONTAL = 302,
+            CV_CAP_PROP_PVAPI_DECIMATIONVERTICAL = 303,
+            CV_CAP_PROP_PVAPI_BINNINGX = 304,
+            CV_CAP_PROP_PVAPI_BINNINGY = 305,
+            CV_CAP_PROP_PVAPI_PIXELFORMAT = 306,
             CV_CAP_PROP_XI_DOWNSAMPLING = 400,
             CV_CAP_PROP_XI_DATA_FORMAT = 401,
             CV_CAP_PROP_XI_OFFSET_X = 402,
@@ -403,21 +409,23 @@ public class Highgui {
  * <p>void createAlphaMat(Mat &mat)</p>
  *
  *
+ * <p>CV_Assert(mat.channels() == 4);</p>
+ *
  * <p>for (int i = 0; i < mat.rows; ++i) {</p>
  *
  * <p>for (int j = 0; j < mat.cols; ++j) {</p>
  *
- * <p>Vec4b& rgba = mat.at<Vec4b>(i, j);</p>
+ * <p>Vec4b& bgra = mat.at<Vec4b>(i, j);</p>
  *
- * <p>rgba[0] = UCHAR_MAX;</p>
+ * <p>bgra[0] = UCHAR_MAX; // Blue</p>
  *
- * <p>rgba[1] = saturate_cast<uchar>((float (mat.cols - j)) / ((float)mat.cols) *
- * UCHAR_MAX);</p>
+ * <p>bgra[1] = saturate_cast<uchar>((float (mat.cols - j)) / ((float)mat.cols) *
+ * UCHAR_MAX); // Green</p>
  *
- * <p>rgba[2] = saturate_cast<uchar>((float (mat.rows - i)) / ((float)mat.rows) *
- * UCHAR_MAX);</p>
+ * <p>bgra[2] = saturate_cast<uchar>((float (mat.rows - i)) / ((float)mat.rows) *
+ * UCHAR_MAX); // Red</p>
  *
- * <p>rgba[3] = saturate_cast<uchar>(0.5 * (rgba[1] + rgba[2]));</p>
+ * <p>bgra[3] = saturate_cast<uchar>(0.5 * (bgra[1] + bgra[2])); // Alpha</p>
  *
  *
  *
@@ -512,21 +520,23 @@ public class Highgui {
  * <p>void createAlphaMat(Mat &mat)</p>
  *
  *
+ * <p>CV_Assert(mat.channels() == 4);</p>
+ *
  * <p>for (int i = 0; i < mat.rows; ++i) {</p>
  *
  * <p>for (int j = 0; j < mat.cols; ++j) {</p>
  *
- * <p>Vec4b& rgba = mat.at<Vec4b>(i, j);</p>
+ * <p>Vec4b& bgra = mat.at<Vec4b>(i, j);</p>
  *
- * <p>rgba[0] = UCHAR_MAX;</p>
+ * <p>bgra[0] = UCHAR_MAX; // Blue</p>
  *
- * <p>rgba[1] = saturate_cast<uchar>((float (mat.cols - j)) / ((float)mat.cols) *
- * UCHAR_MAX);</p>
+ * <p>bgra[1] = saturate_cast<uchar>((float (mat.cols - j)) / ((float)mat.cols) *
+ * UCHAR_MAX); // Green</p>
  *
- * <p>rgba[2] = saturate_cast<uchar>((float (mat.rows - i)) / ((float)mat.rows) *
- * UCHAR_MAX);</p>
+ * <p>bgra[2] = saturate_cast<uchar>((float (mat.rows - i)) / ((float)mat.rows) *
+ * UCHAR_MAX); // Red</p>
  *
- * <p>rgba[3] = saturate_cast<uchar>(0.5 * (rgba[1] + rgba[2]));</p>
+ * <p>bgra[3] = saturate_cast<uchar>(0.5 * (bgra[1] + bgra[2])); // Alpha</p>
  *
  *
  *

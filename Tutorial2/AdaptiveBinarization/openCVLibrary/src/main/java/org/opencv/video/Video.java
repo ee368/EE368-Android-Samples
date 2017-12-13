@@ -100,6 +100,7 @@ public class Video {
         Mat pyramid_mat = new Mat();
         int retVal = buildOpticalFlowPyramid_0(img.nativeObj, pyramid_mat.nativeObj, winSize.width, winSize.height, maxLevel, withDerivatives, pyrBorder, derivBorder, tryReuseInputImage);
         Converters.Mat_to_vector_Mat(pyramid_mat, pyramid);
+        pyramid_mat.release();
         return retVal;
     }
 
@@ -120,6 +121,7 @@ public class Video {
         Mat pyramid_mat = new Mat();
         int retVal = buildOpticalFlowPyramid_1(img.nativeObj, pyramid_mat.nativeObj, winSize.width, winSize.height, maxLevel);
         Converters.Mat_to_vector_Mat(pyramid_mat, pyramid);
+        pyramid_mat.release();
         return retVal;
     }
 

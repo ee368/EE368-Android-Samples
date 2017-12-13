@@ -380,6 +380,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         knnMatch_0(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, trainImage.nativeObj, trainKeypoints_mat.nativeObj, matches_mat.nativeObj, k, mask.nativeObj, compactResult);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -406,6 +407,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         knnMatch_1(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, trainImage.nativeObj, trainKeypoints_mat.nativeObj, matches_mat.nativeObj, k);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -437,6 +439,7 @@ public class GenericDescriptorMatcher {
         Mat masks_mat = Converters.vector_Mat_to_Mat(masks);
         knnMatch_2(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, matches_mat.nativeObj, k, masks_mat.nativeObj, compactResult);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -460,6 +463,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         knnMatch_3(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, matches_mat.nativeObj, k);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -639,6 +643,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         radiusMatch_0(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, trainImage.nativeObj, trainKeypoints_mat.nativeObj, matches_mat.nativeObj, maxDistance, mask.nativeObj, compactResult);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -665,6 +670,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         radiusMatch_1(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, trainImage.nativeObj, trainKeypoints_mat.nativeObj, matches_mat.nativeObj, maxDistance);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -696,6 +702,7 @@ public class GenericDescriptorMatcher {
         Mat masks_mat = Converters.vector_Mat_to_Mat(masks);
         radiusMatch_2(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, matches_mat.nativeObj, maxDistance, masks_mat.nativeObj, compactResult);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 
@@ -719,6 +726,7 @@ public class GenericDescriptorMatcher {
         Mat matches_mat = new Mat();
         radiusMatch_3(nativeObj, queryImage.nativeObj, queryKeypoints_mat.nativeObj, matches_mat.nativeObj, maxDistance);
         Converters.Mat_to_vector_vector_DMatch(matches_mat, matches);
+        matches_mat.release();
         return;
     }
 

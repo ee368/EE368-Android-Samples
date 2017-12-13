@@ -102,7 +102,8 @@ public class Photo {
  * @param h Parameter regulating filter strength for luminance component. Bigger
  * h value perfectly removes noise but also removes image details, smaller h
  * value preserves details but also preserves some noise
- * @param hColor a hColor
+ * @param hColor The same as h but for color components. For most images value
+ * equals 10 will be enought to remove colored noise and do not distort colors
  * @param templateWindowSize Size in pixels of the template patch that is used
  * to compute weights. Should be odd. Recommended value 7 pixels
  * @param searchWindowSize Size in pixels of the window that is used to compute
@@ -167,7 +168,7 @@ public class Photo {
  * @param h Parameter regulating filter strength for luminance component. Bigger
  * h value perfectly removes noise but also removes image details, smaller h
  * value preserves details but also preserves some noise.
- * @param hColor a hColor
+ * @param hColor The same as h but for color components.
  * @param templateWindowSize Size in pixels of the template patch that is used
  * to compute weights. Should be odd. Recommended value 7 pixels
  * @param searchWindowSize Size in pixels of the window that is used to compute

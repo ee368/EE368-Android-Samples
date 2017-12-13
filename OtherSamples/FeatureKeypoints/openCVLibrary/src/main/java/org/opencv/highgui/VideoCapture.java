@@ -8,9 +8,9 @@ import org.opencv.core.Size;
 
 // C++: class VideoCapture
 /**
- * <p>Class for video capturing from video files or cameras.
+ * <p>Class for video capturing from video files, image sequences or cameras.
  * The class provides C++ API for capturing video from cameras or for reading
- * video files. Here is how the class can be used:</p>
+ * video files and image sequences. Here is how the class can be used:</p>
  *
  * <p>#include "opencv2/opencv.hpp" <code></p>
  *
@@ -188,7 +188,7 @@ public class VideoCapture {
  * a Kinect device), the correct way of retrieving data from it is to call
  * "VideoCapture.grab" first and then call "VideoCapture.retrieve" one or more
  * times with different values of the <code>channel</code> parameter. See
- * https://github.com/Itseez/opencv/tree/master/samples/cpp/openni_capture.cpp</p>
+ * https://github.com/opencv/opencv/tree/master/samples/cpp/openni_capture.cpp</p>
  *
  * @see <a href="http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture-grab">org.opencv.highgui.VideoCapture.grab</a>
  */
