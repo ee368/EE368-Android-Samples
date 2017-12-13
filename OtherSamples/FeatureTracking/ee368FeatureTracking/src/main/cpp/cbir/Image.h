@@ -967,8 +967,8 @@ public:
 			Int q = aY[i].Truncate();
 
 			// coordinates relative to neighboring pixels
-			Float u = aX[i] - p;
-			Float v = aY[i] - q;
+			TFixed u = aX[i] - p;
+			TFixed v = aY[i] - q;
 				
 			T *a = PixelPointer(p  , q  );
 			T *b = PixelPointer(p+1, q  );
