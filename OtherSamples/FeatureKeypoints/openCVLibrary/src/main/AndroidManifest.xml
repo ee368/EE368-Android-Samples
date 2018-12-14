@@ -3,6 +3,4 @@
       package="org.opencv"
       android:versionCode="24134"
       android:versionName="2.4.13.4">
-
-    <uses-sdk android:minSdkVersion="8" />
 </manifest>
